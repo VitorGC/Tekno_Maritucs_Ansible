@@ -1,0 +1,13 @@
+---
+- hosts: all
+  tasks:
+  - name: add the /etc/yum.repos.d/epel.repo
+    yum_repository:
+      name: epel
+      description: EPEL repo
+      baseurl: https://download.fedoraproject.org/pub/epel/$releasever/$basearch/
+
+  - name: update all packages - this is like running the 'yum update' command
+  yum:
+    name: "*"
+    state: latest
