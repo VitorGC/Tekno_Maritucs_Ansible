@@ -8,7 +8,6 @@
   - name: Apply updates using dnf module.
     dnf:
       name: '*'
-      security: '{{ dnfupdate_security_only }}'
       state: latest
       update_cache: true
       update_only: true
