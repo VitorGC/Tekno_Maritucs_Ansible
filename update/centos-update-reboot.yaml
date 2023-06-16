@@ -20,4 +20,3 @@
   - name: Reboot when packages were updated
     reboot:
       post_reboot_delay: 60
-    when: apt_update_status.changed
