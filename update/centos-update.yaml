@@ -5,6 +5,8 @@
     dnf:
       name: "*"
       state: latest
+      update_cache: yes
+
 
   - name: Autoremove unneeded packages installed as dependencies
     dnf:
