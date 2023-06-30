@@ -1,0 +1,27 @@
+
+- hosts: all
+  become: yes
+  tasks:
+    - name: Package installation
+      dnf:
+        name:
+          - net-tools
+          - curl
+          - wget
+          - tcpdump
+          - vim
+          - nano
+          - open-vm-tools
+        state: latest
+
+    - name: Upgrade all packages
+      dnf:
+        name: "*"
+        state: latest
+
+    - name: Autoremove unneeded packages installed as dependencies
+      dnf:
+        autoremove: yes
+
+    - name: clear dnf cache
+      command: dnf clean all
