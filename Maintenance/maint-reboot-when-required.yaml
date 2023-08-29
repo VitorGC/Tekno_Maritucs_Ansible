@@ -15,5 +15,5 @@
 
     - name: Reboot when packages were updated
       reboot:
-        post_reboot_delay: 120
+        post_reboot_delay: 180
       when: reboot_required.stat.exists
