@@ -15,5 +15,10 @@
 
     - name: Reboot when packages were updated
       reboot:
-        post_reboot_delay: 180
+          msg: "Reboot initiated by Ansible for kernel updates"
+          connect_timeout: 5
+          reboot_timeout: 300
+          pre_reboot_delay: 0
+          post_reboot_delay: 180
+          test_command: uptime
       when: reboot_required.stat.exists
